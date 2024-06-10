@@ -1,0 +1,133 @@
+@font-face {
+    src: url('fonts/Ubuntu-Medium.ttf');
+}
+
+@font-face {
+    src: url('fonts/Pangolin-Regular.ttf');
+}
+
+
+.ram-pane-gradients {
+    -fx-background-color: linear-gradient(to bottom, #7155b9, #C57390);
+}
+
+
+.ram-text-fields {
+    -fx-border-color: #E13D52;
+    -fx-background-color:  #F8E7EA;
+    -fx-background-insets: 0;
+    -fx-border-radius: 20;
+}
+
+.ram-text-fields .text {
+    -fx-font-family: 'Ubuntu Medium';
+    -fx-fill: #C4738F;
+}
+
+.ram-buttons {
+    -fx-background-color: #EDCFDC;
+    -fx-background-radius: 5em;
+}
+
+.ram-buttons .text {
+    -fx-font-family: 'Ubuntu Medium';
+    -fx-fill: #E13D53;
+}
+
+.text-area {
+    -fx-background-color: #F8E7EA;
+    -fx-border-color: #E13D52;
+    -fx-background-insets: 0;
+    -fx-border-radius: 20;
+}
+
+.text-area .text {
+    -fx-font-family: 'Ubuntu Medium';
+    -fx-fill: #C4738F;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+.custom-checkbox {
+    -fx-font-family: 'Ubuntu Medium';
+    -fx-text-fill: #E13D53;
+}
+
+.custom-checkbox .box {
+    -fx-background-color: #EDCFDC;
+}
+
+.custom-checkbox:selected .mark {
+    -fx-background-color: #7155B9;
+}
+
+
+.ram-labels-text {
+    -fx-font-family: 'Ubuntu Medium';
+    -fx-fill: #E13D53;
+}
+
+.ram-text {
+    -fx-font-family: 'Pangolin Regular';
+    -fx-fill: #7155B9;
+    -fx-font-size: 12px;
+    -fx-text-alignment: center;
+}
+
+.ram-text-2 {
+    -fx-font-family: 'Pangolin Regular';
+    -fx-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-text-alignment: center;
+}
+
+.ram-text-warnings {
+    -fx-font-family: 'Pangolin Regular';
+    -fx-fill: #E13D53;
+    -fx-font-size: 12px;
+    -fx-text-alignment: center;
+}
+
+.ram-chaning-labels {
+    -fx-font-family: 'Pangolin Regular';
+    -fx-text-fill: linear-gradient(to bottom right, #7155b9, #c4738f);
+    -fx-font-size: 12px;
+    -fx-text-alignment: center;
+}
+
+.scroll-pane {
+    -fx-background-color:transparent;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #E13D53;
+    -fx-background-radius: 5em;
+}
+

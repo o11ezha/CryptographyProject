@@ -1,0 +1,152 @@
+@font-face {
+    src: url('fonts/Ubuntu-Medium.ttf');
+}
+
+@font-face {
+    src: url('fonts/Pangolin-Regular.ttf');
+}
+
+
+.rem-pane-gradients {
+    -fx-background-color: linear-gradient(to bottom, #0b3ca8, #71ABF6);
+}
+
+.rem-text-fields {
+    -fx-border-color: #2B389C;
+    -fx-background-color: #C5EFFD;
+    -fx-background-insets: 0;
+    -fx-border-radius: 20;
+}
+
+.rem-text-fields .text {
+    -fx-font-family: 'Ubuntu Medium';
+    -fx-fill: #4552b0;
+}
+
+.rem-buttons {
+    -fx-background-color: #ACDFF5;
+    -fx-background-radius: 5em;
+}
+
+.rem-buttons .text {
+    -fx-font-family: 'Ubuntu Medium';
+    -fx-fill: #3342A1;
+}
+
+.rem-text {
+    -fx-font-family: 'Pangolin Regular';
+    -fx-fill: #2F5BBB;
+    -fx-font-size: 12px;
+    -fx-text-alignment: center;
+}
+
+
+.rem-text-2 {
+    -fx-font-family: 'Pangolin Regular';
+    -fx-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-text-alignment: center;
+}
+
+.rem-text-warnings {
+    -fx-font-family: 'Pangolin Regular';
+    -fx-fill: #3342A1;
+    -fx-font-size: 12px;
+    -fx-text-alignment: center;
+}
+
+.rem-labels-text {
+    -fx-font-family: 'Ubuntu Medium';
+    -fx-fill: #3342A1;
+}
+
+.custom-checkbox {
+    -fx-font-family: 'Ubuntu Medium';
+    -fx-text-fill: #3342A1;
+}
+
+.custom-checkbox .box {
+    -fx-background-color: #ACDFF5;
+}
+
+.custom-checkbox:selected .mark {
+    -fx-background-color: #2F5BBB;
+}
+
+.text-area {
+    -fx-background-color: #C5EFFD;
+    -fx-border-color: #2B389C;
+    -fx-background-insets: 0;
+    -fx-border-radius: 20;
+}
+
+.text-area .text {
+    -fx-font-family: 'Ubuntu Medium';
+    -fx-fill: #4552b0;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color:transparent;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #2B389C;
+    -fx-background-radius: 5em;
+}
+
+.histogram {
+    -fx-background-color: #BDE6F8;
+    -fx-background-radius: 2em;
+}
+
+.histogram .chart-content {
+    -fx-background-color: #BDE6F8;
+    -fx-background-radius: 2em;
+}
+
+.axis {
+    -fx-tick-label-fill: #2B389C;
+    -fx-tick-length: 5px;
+}
+
+.default-color0.chart-bar {
+    -fx-bar-fill: #007ACC;
+}
+
+.axis .axis-label {
+    -fx-font-family: 'Ubuntu Medium';
+    -fx-text-fill: #2B389C;
+}
+
+.chart-alternative-column-fill {
+    -fx-bar-fill: #007ACC;
+}

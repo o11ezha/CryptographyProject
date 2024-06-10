@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.goofyconverter.SceneController">
+   <children>
+      <StackPane layoutX="400.0" onMouseEntered="#changeRemHomeScene" onMouseExited="#backRemHomeScene" prefHeight="400.0" prefWidth="400.0" stylesheets="@../../../css/REMstyle.css">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #C5EFFD;">
+               <children>
+                  <VBox layoutX="4.0" prefHeight="400.0" prefWidth="180.0" spacing="8.0" stylesheets="@../../../css/REMstyle.css">
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="8.0" />
+                     </padding>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#openChartWindow" prefHeight="30.0" prefWidth="150.0" styleClass="rem-buttons" text="График" />
+                        <Button fx:id="coordinatesButton" mnemonicParsing="false" onAction="#getCoordinates" prefHeight="30.0" prefWidth="150.0" styleClass="rem-buttons" text="Координаты" visible="false" />
+                        <Button fx:id="downloadMsg" mnemonicParsing="false" onAction="#downloadMessage" prefHeight="30.0" prefWidth="150.0" styleClass="rem-buttons" text="Скачать сообщение" visible="false" />
+                        <Pane prefHeight="225.0" prefWidth="159.0">
+                           <children>
+                              <Text fx:id="remSpeech" layoutX="4.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="rem-text" text="Спасибо, что воспользовались нашим сервисом~ Если Ваше сообщение слишком длинное, прошу, воспользуйтесь кнопкой скачивания файла~ Если Вам необходимо зашифровать сообщение  - обратитесь к моей сестрёнке Рам~" wrappingWidth="150.39999999999986" />
+                              <TextArea fx:id="messageField2" editable="false" layoutX="-6.0" layoutY="12.0" prefHeight="66.0" prefWidth="172.0" stylesheets="@../../../css/REMstyle.css" wrapText="true" />
+                              <Text fx:id="msgLabel" layoutX="-6.0" layoutY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="rem-labels-text" text="Сообщение:" />
+                           </children>
+                        </Pane>
+                        <Button fx:id="remChangePic" mnemonicParsing="false" onAction="#changePic" prefHeight="30.0" prefWidth="160.0" styleClass="rem-buttons" stylesheets="@../../../css/REMstyle.css" text="Хочу другую картинку :(">
+                           <VBox.margin>
+                              <Insets top="2.0" />
+                           </VBox.margin></Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_RIGHT" fillWidth="false" layoutX="184.0" prefHeight="180.0" prefWidth="211.0" spacing="10.0" stylesheets="@../../../css/REMstyle.css">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="rem-labels-text" text="Ключ шифрования:" />
+                        <HBox alignment="CENTER" fillHeight="false" prefHeight="30.0" prefWidth="230.0" spacing="10.0">
+                           <children>
+                              <CheckBox fx:id="keyCheck2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleKeyCheck2" prefHeight="15.0" prefWidth="50.0" styleClass="custom-checkbox" text="Вкл." />
+                              <TextField fx:id="keyField2" disable="true" prefHeight="25.0" prefWidth="140.0" styleClass="rem-text-fields" />
+                           </children>
+                        </HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="rem-labels-text" text="Стеганоключ:" />
+                        <TextField fx:id="stegoKeyField2" prefHeight="25.0" prefWidth="160.0" styleClass="rem-text-fields" />
+                        <Button mnemonicParsing="false" onAction="#decrypt" prefHeight="30.0" prefWidth="182.0" styleClass="rem-buttons" text="Расшифрование" />
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="315.0" fitWidth="225.0" layoutX="171.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/rem___render__2_by_aaliez_db16g05-375w-2x.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="remSpeech2" layoutX="10.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="rem-text" text="Text" visible="false" wrappingWidth="172.0" />
+               </children>
+            </AnchorPane>
+            <Pane fx:id="imgRemPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #80C5E8;" stylesheets="@../../../css/REMstyle.css">
+               <children>
+                  <Button fx:id="browsePNG" layoutX="30.0" layoutY="90.0" mnemonicParsing="false" onAction="#browseDir" prefHeight="30.0" prefWidth="180.0" styleClass="rem-buttons" stylesheets="@../../../css/REMstyle.css" text="Выбрать изображение" />
+                  <Button fx:id="remChangeButton" layoutX="30.0" layoutY="350.0" mnemonicParsing="false" onAction="#confirmPic" prefHeight="30.0" prefWidth="180.0" styleClass="rem-buttons" stylesheets="@../../../css/REMstyle.css" text="Выбрал.." />
+                  <Text layoutX="12.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="rem-text-2" text="Прошу Вас прикрепить картинку расширения PNG при помощи верхней кнопки~ Если Вы не знаете, где находится зашифрованная Вами картинка, то попробуйте поискать её в папке &quot;Документы&quot; с оригинальным названием и расширением &quot;.png&quot;~" wrappingWidth="376.0000076293945" />
+                  <ImageView fx:id="predImage2" fitHeight="180.0" fitWidth="210.0" layoutX="14.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+                     <viewport>
+                        <Rectangle2D height="180.0" width="210.0" />
+                     </viewport>
+                  </ImageView>
+                  <ImageView fitHeight="180.0" fitWidth="210.0" layoutX="14.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/NewCanvas2.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="noBrowsedImg2" layoutX="48.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="rem-text-warnings" text="Вам не кажется, что Вы что-то забыли?" visible="false" wrappingWidth="140.80013346672047" />
+                  <ImageView fitHeight="360.0" fitWidth="356.0" layoutX="137.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/3395857645ff7cea8a94280020.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <VBox fx:id="remVbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="rem-pane-gradients" stylesheets="@../../../css/REMstyle.css">
+               <children>
+                  <HBox prefHeight="408.0" prefWidth="401.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="rem-text-2" text="Меня зовут Рем и я помогу Вам с раcшифровкой сообщения~ Кратко расскажу как работает моя часть.. На следующем экране, пожалуйста, прикрепите изображение формата &quot;.PNG&quot;. Затем впишите стегоключ и ключ шифрования, если они Вам известны. Все дополнительные файлы (координаты и файл сообщения) будут скачены в вашу папку документов (C:\Users\*имя вашего пользователя*\Documents) График интенсивности пикселей по изображению и объём стегоконтейнера Вы можете посмотреть без вышеописанных данных~ Благодарю Вас за использование нашего приложения~" wrappingWidth="146.60003662109375">
+                           <HBox.margin>
+                              <Insets left="5.0" top="20.0" />
+                           </HBox.margin>
+                        </Text>
+                        <ImageView fitHeight="400.0" fitWidth="290.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/__render__rem_by_xbunnygoth_daee9a4-414w-2x.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+      <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#changeRamHomeScene" onMouseExited="#backRamHomeScene" prefHeight="400.0" prefWidth="400.0">
+         <children>
+            <AnchorPane fx:id="formPaneEncrypt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseExited="#backRamHomeScene" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #F8E7EA;">
+               <children>
+                  <ImageView fitHeight="315.0" fitWidth="232.0" layoutX="-3.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/ram___render_by_aaliez_db16egf-375w-2x.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="TOP_CENTER" layoutX="216.0" prefHeight="400.0" prefWidth="180.0" spacing="10.0" stylesheets="@../../../css/RAMstyle.css">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="ram-labels-text" text="Сообщение:">
+                           <VBox.margin>
+                              <Insets right="80.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextArea fx:id="messageField" prefHeight="139.0" prefWidth="159.0" stylesheets="@../../../css/RAMstyle.css" wrapText="true" />
+                        <Pane prefHeight="162.0" prefWidth="182.0" stylesheets="@../../../css/RAMstyle.css">
+                           <children>
+                              <Text fx:id="ramSpeech1" layoutX="2.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="ram-text" text="Ваша картинка с секретом сохранена здесь:" wrappingWidth="157.21875" />
+                              <Label fx:id="pathPNGlabel" layoutX="-64.0" layoutY="44.0" prefHeight="20.0" prefWidth="232.0" styleClass="ram-chaning-labels" stylesheets="@../../../css/RAMstyle.css" />
+                              <Text fx:id="ramSpeech2" layoutX="3.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="ram-text" text="Спасибо, что воспользовались нашим сервисом! Если Вам необходим обратный алгоритм - обратитесь к моей сестре Рем!" wrappingWidth="157.21875" />
+                           </children>
+                        </Pane>
+                        <Button fx:id="ramChangePic" mnemonicParsing="false" onAction="#changePic" prefHeight="30.0" prefWidth="160.0" styleClass="ram-buttons" stylesheets="@../../../css/RAMstyle.css" text="Хочу другую картинку :(" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" fillWidth="false" layoutX="5.0" prefHeight="180.0" prefWidth="215.0" spacing="10.0" stylesheets="@../../../css/RAMstyle.css">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="ram-labels-text" text="Ключ шифрования:">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Text>
+                        <HBox alignment="CENTER" fillHeight="false" prefHeight="30.0" prefWidth="230.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="keyField" disable="true" prefHeight="25.0" prefWidth="180.0" styleClass="ram-text-fields" stylesheets="@../../../css/RAMstyle.css">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                              <CheckBox fx:id="keyCheck1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleKeyCheck1" prefHeight="15.0" prefWidth="50.0" styleClass="custom-checkbox" stylesheets="@../../../css/RAMstyle.css" text="Вкл.">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="ram-labels-text" text="Стеганоключ:">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Text>
+                        <TextField fx:id="stegoKeyField" prefHeight="25.0" prefWidth="160.0" styleClass="ram-text-fields" stylesheets="@../../../css/RAMstyle.css">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#encrypt" prefHeight="30.0" prefWidth="160.0" styleClass="ram-buttons" stylesheets="@../../../css/RAMstyle.css" text="Шифрование">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <Pane fx:id="imgRamPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #D69BC0;" stylesheets="@../../../css/RAMstyle.css">
+               <children>
+                  <ImageView fitHeight="371.0" fitWidth="262.0" layoutX="-48.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/15062981115ff7ceb8459640020.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="browseBMP" layoutX="190.0" layoutY="90.0" mnemonicParsing="false" onAction="#browseDir" prefHeight="30.0" prefWidth="180.0" styleClass="ram-buttons" stylesheets="@../../../css/RAMstyle.css" text="Выбрать изображение" />
+                  <Button fx:id="ramChangeButton" layoutX="190.0" layoutY="350.0" mnemonicParsing="false" onAction="#confirmPic" prefHeight="30.0" prefWidth="180.0" styleClass="ram-buttons" stylesheets="@../../../css/RAMstyle.css" text="Выбрал!" />
+                  <ImageView fx:id="predImage1" fitHeight="180.0" fitWidth="210.0" layoutX="175.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+                     <viewport>
+                        <Rectangle2D height="180.0" width="210.0" />
+                     </viewport></ImageView>
+                  <Text layoutX="12.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="ram-text-2" text="Прошу Вас выбрать картинку расширения BMP - для этого используется верхняя кнопка. С другим расширением не получится. Выбранный файл отобразится ниже. Как только определитесь - подтвердите свой выбор, нажав на соответствующую кнопку." wrappingWidth="376.0000076293945" />
+                  <Text fx:id="noBrowsedImg1" layoutX="210.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="ram-text-warnings" text="Вы ничего не забыли?!" visible="false" wrappingWidth="140.80013346672047" />
+                  <ImageView fx:id="predImage11" fitHeight="180.0" fitWidth="210.0" layoutX="175.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/NewCanvas2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <VBox fx:id="ramVbox1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="400.0" styleClass="ram-pane-gradients" stylesheets="@../../../css/RAMstyle.css">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" stylesheets="@../../../css/RAMstyle.css">
+                     <children>
+                        <ImageView fitHeight="400.0" fitWidth="290.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/__render__ram_by_xbunnygoth_daee91g-414w-2x.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="ram-text-2" text="Меня зовут Рам и я занимаюсь стеганографией с помощью изображения. Вот краткая инструкция, слушайте внимательно. Сначала Вы прикрепляете картинку с раширением &quot;.BMP&quot;. Затем Вы обязательно придумываете сообщение, которое хотите передать, и стегоключ - он необходим для сокрытия информации. Не разглашайте его сторонним лицам! В том числе я предоставляю необязательное дополнительное шифрование, если Вы вдруг оказались разиней и раскрыли недображелателю свой стегключ." wrappingWidth="140.80013346672052">
+                           <HBox.margin>
+                              <Insets top="20.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
